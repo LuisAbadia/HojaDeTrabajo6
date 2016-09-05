@@ -1,22 +1,104 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author JoiceAndrea
- */
+
+
+import java.util.Scanner;
+
+
+
 public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         
-        //1 creas un objeto de tipo desarrolladores para poder implementar tdos los metodos
+        //Se crea el objeto de tipo desarrollador
+        Desarrolladores miDesarrollador = new Desarrolladores(); //1 creas un objeto de tipo desarrolladores para poder implementar tdos los metodos
+        
+        //Declaracion de Variables
+        int a = 1;
+        int b = 1;
+        int tipo1,tipo2;
+        int opcion, opcion2,opcion3;
+        String teclado="";
+        String teclado2="";
+        String teclado3="";
+        
+        
+        while(a==1){
+//Primer menu seleccion de Hash
+            System.out.println("************MENU Principal**************");
+            System.out.println("Bienvenido al programa!");
+            System.out.println("Que tipo desea utilizar:");
+            System.out.println("1) HashSet");
+            System.out.println("2) TreeSet");
+            System.out.println("3) LinkedHashSet");
+            System.out.println("4) Salir del Programa");
+            System.out.println("***Ingrese solo caracteres numericos y enteros***");
+            Scanner EntradaScanner = new Scanner(System.in);
+            teclado = EntradaScanner.nextLine();
+            
+            System.out.println ("Entrada recibida por teclado es: \"" + teclado+"\"");
+            opcion= Integer.parseInt(teclado);
+            if(opcion==4){
+                a=0;
+            }
+            
+            miDesarrollador.TipoSet(opcion);
+            while(b==1){
+//Menu Secundario
+                System.out.println("************MENU Secundario**************");
+                System.out.println("¿Que accion desea Realiazar?");
+                System.out.println("1) Ingresar Desarrolladores");
+                System.out.println("2) Mostrar Desarrolladores");
+                System.out.println("3) Mostrar intersecciones");
+                System.out.println("4) Conjunto con mayor numero de miembros");
+                System.out.println("5) Mostrar Subconjunto");
+                System.out.println("***Ingrese solo caracteres numericos y enteros***");
+                Scanner EntradaScanner2 = new Scanner(System.in);
+                teclado2 = EntradaScanner2.nextLine();
+                opcion2= Integer.parseInt(teclado2);
+                
+                if(opcion2==1){
+        //En esta seccion ingresa los nombre de los desarrolladores y el tipo
+                    System.out.println("por favor ingrese el nombre del desarrollador y el tipo");
+                    System.out.println("Tipos:");
+                    System.out.println("1) JAVA");
+                    System.out.println("2) Celulares");
+                    System.out.println("3) WEB");
+                    
+                    System.out.println("Nombre :");
+                    Scanner EntradaScanner3 = new Scanner(System.in);
+                    teclado3 = EntradaScanner3.nextLine();
+                    System.out.println("Tipo");
+                    Scanner EntradaScanner4 = new Scanner(System.in);
+                    teclado2 = EntradaScanner4.nextLine();
+                    tipo1 = Integer.parseInt(teclado2);
+                            
+                    miDesarrollador.Ingresar(teclado3, tipo1);
+                }
+                if(opcion2==2){
+        //En esta seccion selecciona que grupo mostrar
+                    System.out.println("Que Grupo desea ver?");
+                    System.out.println("1) JAVA");
+                    System.out.println("2) Celulares");
+                    System.out.println("3) WEB");
+                    Scanner EntradaScanner5 = new Scanner(System.in);
+                    teclado2 = EntradaScanner5.nextLine();
+                    tipo2 = Integer.parseInt(teclado2);
+                    
+                    if(tipo2==1){
+                        miDesarrollador.mostrar(grupo);
+                       
+                    }
+                    
+                }
+                
+                
+            }
+            
+        }
+        
         //das bienvenida y pedis qeu tipo de set van a utilizar
         // con el que te den lo metes en metodo tipo set
         //luego haces un menu que de todas las opciones como 
