@@ -1,21 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *Universidad del Valle de Guatemala
+ * Algoritmos y Estructuras de Datos
+ * Hoja de Trabajo 6
+ * Joice Miranda
+ * Luis Abadia
  */
 
-    import java.util.Set;
-    import java.util.HashSet;
-    import java.util.TreeSet;
-    import java.util.LinkedHashSet;
-    import java.util.Scanner;
+import java.util.Set;
 
-/**
- *
- * @author JoiceAndrea
- */
 public class Desarrolladores {
-     Set Java, Celulares, Web, Doble, Triple ;
+    Set Java, Celulares, Web, Doble, Triple ;
      
      //metodo que crea la instancia de Set dependiendo de la opc ingresada por el usuario
      public void TipoSet  ( int opc){
@@ -119,6 +113,5 @@ public class Desarrolladores {
                
           }
      }
+    
 }
-
-
