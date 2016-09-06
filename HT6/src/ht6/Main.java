@@ -1,6 +1,5 @@
 
 
-
 import java.util.Scanner;
 
 
@@ -50,10 +49,9 @@ public class Main {
                 System.out.println("************MENU Secundario**************");
                 System.out.println("¿Que accion desea Realiazar?");
                 System.out.println("1) Ingresar Desarrolladores");
-                System.out.println("2) Mostrar Desarrolladores");
+                System.out.println("2) Conjunto con mayor numero de miembros");
                 System.out.println("3) Mostrar intersecciones");
-                System.out.println("4) Conjunto con mayor numero de miembros");
-                System.out.println("5) Mostrar Subconjunto");
+                System.out.println("4) Salir");
                 System.out.println("***Ingrese solo caracteres numericos y enteros***");
                 Scanner EntradaScanner2 = new Scanner(System.in);
                 teclado2 = EntradaScanner2.nextLine();
@@ -78,24 +76,40 @@ public class Main {
                     miDesarrollador.Ingresar(teclado3, tipo1);
                 }
                 if(opcion2==2){
-        //En esta seccion selecciona que grupo mostrar
-                    System.out.println("Que Grupo desea ver?");
-                    System.out.println("1) JAVA");
-                    System.out.println("2) Celulares");
-                    System.out.println("3) WEB");
+        //En esta seccion selecciona que grupo es el mas grande en miembros
+                    System.out.println("Grupo mas grande de miembros es: ");
+                    miDesarrollador.mayor();
+                }
+                if(opcion2==3){
+                    System.out.println("****Interseccion****");
+                    System.out.println("¿Que interseccion desea ver");
+                    System.out.println("1) Java, Web y Celulares");
+                    System.out.println("2) Java y Web");
+                    System.out.println("3) Java y Celulares");
+                    System.out.println("4) Web y Celulares");
                     Scanner EntradaScanner5 = new Scanner(System.in);
-                    teclado2 = EntradaScanner5.nextLine();
-                    tipo2 = Integer.parseInt(teclado2);
+                    teclado3 = EntradaScanner5.nextLine();
+                    tipo2 = Integer.parseInt(teclado3);
                     
                     if(tipo2==1){
-                        miDesarrollador.mostrar(grupo);
-                       
+                        miDesarrollador.intersecciones(true, true, true);
                     }
-                    
+                    if(tipo2==2){
+                        miDesarrollador.intersecciones(true, true, false);
+                    }
+                    if(tipo2==3){
+                        miDesarrollador.intersecciones(true, false, true);
+                    }
+                    if(tipo2==4){
+                        miDesarrollador.intersecciones(false, true, true);
+                    }
                 }
-                
-                
+                if(opcion2==4){
+                    b=0;
+                }  
             }
+            
+            b=1;
             
         }
         
